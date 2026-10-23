@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0208"
+    android:padding="16dp">
+
+    <!-- Contenedor Principal con Fondo Matrix -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/matrix_grid_background"
+        android:paddingStart="36dp"
+        android:paddingEnd="36dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp">
+
+        <!-- Barra Superior: Franja Verde Neón -->
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FF41"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/txtGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="SYSTEM ONLINE // WAKE UP, NEO."
+                android:textColor="#0D0208"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/fontregular"
+                android:letterSpacing="0.10" />
+
+            <Button
+                android:id="@+id/btnSettings"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text=" SETTINGS "
+                android:textColor="#00FF41"
+                android:background="@drawable/selector_matrix_btn"
+                android:fontFamily="@font/fontregular"
+                android:focusable="true" />
+        </RelativeLayout>
+
+        <!-- Reloj Central y Fecha con Fondo Oscuro -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#CC0D0208"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:layout_above="@id/dockLayout"
+            android:layout_below="@id/topBar">
+
+            <TextClock
+                android:id="@+id/digitalClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="hh:mm"
+                android:format24Hour="HH:mm"
+                android:textColor="#00FF41"
+                android:textSize="105sp"
+                android:fontFamily="@font/fontregular" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MATRIX TIME: 22.10.2026  //  BOGOTÁ 15°C"
+                android:textColor="#00FF41"
+                android:textSize="13sp"
+                android:fontFamily="@font/fontregular"
+                android:letterSpacing="0.08"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Dock Inferior con botones interactivos y colores dinámicos -->
+        <LinearLayout
+            android:id="@+id/dockLayout"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="4">
+
+            <!-- Slot 1: Spotify -->
+            <FrameLayout
+                android:id="@+id/dockSpotify"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/selector_matrix_box"
+                android:layout_margin="6dp"
+                android:padding="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[ ♪ ]"
+                        android:textColor="@color/matrix_text_color"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/fontregular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SPOTIFY"
+                        android:textColor="@color/matrix_text_color"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/fontregular"
+                        android:letterSpacing="0.08"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Slot 2: YouTube -->
+            <FrameLayout
+                android:id="@+id/dockYoutube"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/selector_matrix_box"
+                android:layout_margin="6dp"
+                android:padding="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[ ▷ ]"
+                        android:textColor="@color/matrix_text_color"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/fontregular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="YOUTUBE"
+                        android:textColor="@color/matrix_text_color"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/fontregular"
+                        android:letterSpacing="0.08"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Slot 3: Xuper -->
+            <FrameLayout
+                android:id="@+id/dockXuper"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/selector_matrix_box"
+                android:layout_margin="6dp"
+                android:padding="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[ ❖ ]"
+                        android:textColor="@color/matrix_text_color"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/fontregular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="XUPER"
+                        android:textColor="@color/matrix_text_color"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/fontregular"
+                        android:letterSpacing="0.08"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Slot 4: Play Store -->
+            <FrameLayout
+                android:id="@+id/dockPlayStore"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/selector_matrix_box"
+                android:layout_margin="6dp"
+                android:padding="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="[ ⌂ ]"
+                        android:textColor="@color/matrix_text_color"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/fontregular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PLAY STORE"
+                        android:textColor="@color/matrix_text_color"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/fontregular"
+                        android:letterSpacing="0.08"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</FrameLayout>

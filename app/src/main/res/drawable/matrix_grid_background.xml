@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. Color base de respaldo oscuro (#0D0208) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#0D0208" />
+        </shape>
+    </item>
+
+    <!-- 2. Tu imagen de fondo de Matrix (ej: matrix_bg.png de 1920x1080) -->
+    <item android:drawable="@drawable/matrixwall" />
+
+    <!-- 3. Capa de sombreado translúcido para contraste óptimo -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#900D0208" />
+        </shape>
+    </item>
+</layer-list>
